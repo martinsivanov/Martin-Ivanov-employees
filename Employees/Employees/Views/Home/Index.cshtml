@@ -1,34 +1,22 @@
-﻿@model IEnumerable<TeamModel>
+﻿@model IEnumerable<FileModel>
 
 @{
     ViewData["Title"] = "Home Page";
 }
 
-@if (!Model.Any())
-{
-    <h2 class="text-center text-danger">No matches!</h2>
-}
-else
-{
-    <table class="table">
+<table>
         <thead>
             <tr>
-                <th scope="col">Employee ID #1</th>
-                <th scope="col">Employee ID #2</th>
-                <th scope="col">Project ID</th>
-                <th scope="col">Days worked</th>
+                <th scope="col">File Name:</th>
             </tr>
         </thead>
-        @foreach (var team in Model)
+        @foreach (FileModel file in Model)
         {
             <tbody>
                 <tr>
-                    <td>@team.FirstEmployeeId</td>
-                    <td>@team.SecondEmployeeId</td>
-                    <td>@team.ProjectId</td>
-                    <td>@team.DaysWorked</td>
-                </tr>
+                <td>@file.FileName</td>
+                <td> <a asp-controller="Home" asp-action="GetFileData" asp-route-fileName="@file.FileName" class="btn btn-info">Choose</a></td>
+            </tr>
             </tbody>
         }
-    </table>
-}
+</table>

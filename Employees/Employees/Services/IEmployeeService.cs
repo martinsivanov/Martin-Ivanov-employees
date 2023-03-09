@@ -5,6 +5,6 @@
 
     public interface IEmployeeService
     {
-        List<TeamModel> PairEmployeesWorkedTogether();
+        List<TeamModel> PairEmployeesWorkedTogether(string fileName);
     }
 }

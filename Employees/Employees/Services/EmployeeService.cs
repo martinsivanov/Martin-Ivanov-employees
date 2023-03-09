@@ -8,9 +8,9 @@
 
     public class EmployeeService : IEmployeeService
     {
-        public List<TeamModel> PairEmployeesWorkedTogether()
+        public List<TeamModel> PairEmployeesWorkedTogether(string fileName)
         {
-            var lines = File.ReadAllLines(@"Resource\data.csv");
+            var lines = File.ReadAllLines($"Resource/{fileName}");
 
             var employees = new List<EmployeeModel>();
 
