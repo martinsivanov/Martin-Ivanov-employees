@@ -21,12 +21,14 @@
             _employeeService = employeeService;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             var files = GetListFiles();
             return View(files);
         }
 
+        [HttpGet]
         public IActionResult GetFileData(string fileName)
         {
             var teams = _employeeService.PairEmployeesWorkedTogether(fileName);
